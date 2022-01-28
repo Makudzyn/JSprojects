@@ -1,0 +1,71 @@
+body{
+    height: 100vh;
+    background: url("background.png") center no-repeat;
+    background-size: cover;
+}
+
+/*Header*/
+#cardsPurpose{
+    margin: 0;
+    padding: 20px 0;
+    font-family: 'Luxurious Roman', cursive;
+    font-size: 40px;
+    text-align: center;
+}
+
+/*Cards*/
+.cardsBlock{
+    width: 100%;
+    height: 950px;
+}
+
+.cardRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.card{
+    position: relative;
+    width: 280px;
+    height: 280px;
+
+    border: 2px solid blue;
+    border-radius: 15px;
+    margin: 20px 0;
+
+    transform-style: preserve-3d;
+    transition: transform 1.5s ease;
+}
+
+.card:hover {
+    transform: rotateX(180deg);
+}
+
+
+.cardTextFront,
+.cardTextBack{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+
+    height: 100%;
+    width: 100%;
+
+    border-radius: 15px;
+    font: bold 22px 'Architects Daughter', cursive;
+    text-transform: uppercase;
+    background-color: blue;
+    color: #ff8c69;
+}
+
+.cardTextFront{
+    z-index: 2;
+    backface-visibility: hidden;
+}
+
+.cardTextBack{
+    z-index: 1;
+    transform: rotateX(180deg);
+}
