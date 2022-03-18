@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hangman</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<div class="container">
+    <div id="gameInfo">
+        Здесь будет появляться полезная информация во время игры...
+    </div>
+    <div class="fakeContainer">
+        <div class="gameBlock">
+            <img id="hangmanPic" src="" alt="hangman picture">
+            <div class="gamePanel">
+                <textarea class="gameTextArea" id="secretWordArea" disabled="disabled"></textarea>
+                <textarea class="gameTextArea" id="enterSpaceArea" placeholder="Введите букву или слово и нажмите кнопку..."></textarea>
+                <div class="gameButtons">
+                    <button class="gameButton" id="enterLetter">Ввести букву</button>
+                    <button class="gameButton">Ввести слово</button>
+                </div>
+            </div>
+            <div class="countingBlock">
+                <strong>Прошло времени: <time id="minutesElement">00</time>.<time id="secondsElement">00</time></strong>
+                <strong>Осталось жизней: <em>0</em> </strong>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div> <!--/.Container-->
+
+
+<script src="script.js"></script>
+</body>
+</html>
