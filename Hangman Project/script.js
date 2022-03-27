@@ -1,5 +1,6 @@
 let guessingWords = ["javascript", "apple", "notebook", "wolf", "phone", "monster"];
-let secretWord = [], hp = 8, rightAnswer = false, letterUsed = false;
+let secretWord = [], hp = 8;
+let rightAnswer = false, letterUsed = false;
 let guessWord = guessingWords[Math.floor(Math.random() * guessingWords.length)];
 for (let i = 0; i < guessWord.length; i++){
     secretWord[i] = "_";
@@ -62,8 +63,9 @@ document.getElementById("enterLetter").addEventListener("click", function () {
             document.getElementById("secretWordArea").innerText = secretWord.join(" ");
             rightAnswer = true;
             if (guessWord === secretWord.join("")){
-                printInfo("Поздравляю, вы отгадали слово!!!");
+                printInfo("Вы отгадали слово!!!");
                 clearInterval(interval);
+                gameEnd(hp);
             }
         }else if(i === guessWord.length - 1 && rightAnswer === false){
             printInfo("Такой буквы нет в загаданном слове! Попробуйте снова.");
@@ -71,7 +73,10 @@ document.getElementById("enterLetter").addEventListener("click", function () {
             document.getElementById("hpElement").innerText = hp;
             if (hp === 0){
                 printInfo("Попытки кончились, вы не смогли отгадать слово...");
+                guessWord = guessWord.split("");
+                document.getElementById("secretWordArea").innerText = guessWord.join(" ");
                 clearInterval(interval);
+                gameEnd(hp);
             }
             return;
         }
@@ -84,6 +89,18 @@ document.getElementById("enterLetter").addEventListener("click", function () {
 
 function printInfo(str){
     document.getElementById("gameInfo").innerText = str;
+}
+
+function gameEnd(hpLeft){
+    document.getElementById("endGameInfo").style.visibility = 'visible';
+    document.getElementById("endGameInfo").style.opacity = '1';
+    document.querySelector(".container").style.filter = 'blur(2px)';
+
+    if (hpLeft !== 0){
+        document.getElementById("endGameInfo").innerText = "Поздравляю, у вас получилось отгадать слово!";
+    }else if(hpLeft === 0){
+        document.getElementById("endGameInfo").innerText = "К сожалению у вас не получилось отгадать слово...";
+    }
 }
 
 function timerStart(){

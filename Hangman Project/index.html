@@ -8,10 +8,11 @@
 </head>
 <body>
 <div class="container">
-    <div id="gameInfo">
-        Здесь будет появляться полезная информация во время игры...
-    </div>
-    <div class="fakeContainer">
+
+        <div id="gameInfo">
+            Здесь будет появляться полезная информация во время игры...
+        </div>
+
         <div class="gameBlock">
             <img id="hangmanPic" src="" alt="hangman picture">
             <div class="gamePanel">
@@ -26,14 +27,13 @@
                 <strong>Прошло времени: <time id="minutesElement">00</time>:<time id="secondsElement">00</time></strong>
                 <strong>Осталось жизней: <em id="hpElement">0</em> </strong>
             </div>
-        </div>
-
-
-    </div>
-
+        </div> <!--/.gameBlock-->
 
 </div> <!--/.Container-->
 
+    <div class="endGamePanel">
+        <div id="endGameInfo"></div>
+    </div>
 
 <script src="script.js"></script>
 </body>

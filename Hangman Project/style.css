@@ -5,17 +5,21 @@ body{
 .container{
     width: 100%;
     height: 1000px;
-    border: 1px solid black;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    border: 1px solid black;
 }
+
+/*infoPanels*/
 
 #gameInfo{
     height: 50px;
     width: 750px;
     top: 240px;
+
     position: absolute;
     display: flex;
     justify-content: center;
@@ -24,11 +28,31 @@ body{
     border: 1px solid black;
 }
 
-.fakeContainer{
-
+.endGamePanel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+#endGameInfo{
+    height: 200px;
+    width: 400px;
+    top: 375px;
 
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    visibility: collapse;
+    transition: opacity 4500ms ease-out;
+    border: 1px solid black;
+
+    background-color: #fff;
+}
+
+/*gamePanels*/
 
 .gameBlock{
     display: flex;
@@ -39,19 +63,23 @@ body{
 #hangmanPic{
     height: 400px;
     width: 400px;
+
     border: 1px solid black;
 }
 
 .gamePanel{
     height: 400px;
     width: 400px;
-    border: 1px solid black;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
+
+    border: 1px solid black;
 }
+
+/*textAreas*/
 
 .gameTextArea{
     margin-top: 15px;
@@ -68,6 +96,8 @@ body{
 #enterSpaceArea{
 
 }
+
+/*gameButtonsBlock*/
 
 .gameButtons{
     width: 400px;
@@ -87,7 +117,7 @@ body{
 .countingBlock{
     height: 90px;
     width: 750px;
-    bottom: 150px;
+    top: 710px;
     position: absolute;
     display: flex;
     justify-content: space-evenly;
@@ -95,3 +125,5 @@ body{
 
     border: 1px solid black;
 }
+
+
